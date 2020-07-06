@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     # Apss
+    'schoolClass',
     'student',
 ]
 
