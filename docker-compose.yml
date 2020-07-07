@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    build: ./api
+    tty: true
+    command:
+      - bash
+      - -c
+      - |
+        python3 manage.py migrate
+        python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app/api
+    env_file: .env
+    depends_on:
+      - postgres
+    links:
+      - postgres:db
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
