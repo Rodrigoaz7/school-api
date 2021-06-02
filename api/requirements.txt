@@ -21,6 +21,6 @@ ruamel.yaml.clib==0.2.0
 six==1.15.0
 sqlparse==0.3.1
 uritemplate==3.0.1
-urllib3==1.25.9
+urllib3==1.26.5
 psycopg2==2.8.4
 python-dotenv==0.13.0
